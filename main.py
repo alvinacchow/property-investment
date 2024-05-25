@@ -1,24 +1,29 @@
+import json
 from flask import Flask, render_template, request, jsonify
-from melissa_api import verify_address
 
 app = Flask(__name__)
 
+# Load login credentials from a JSON file
+with open('login_data.json', 'r') as file:
+    login_data = json.load(file)
+
 @app.route("/")
-def hello_world():
-    #return render_template("index.html")
-    return render_template("portfolio.html")
+def index():
+    return render_template("index.html")
 
-@app.route("/verify-address", methods=["POST"])
-def verify_address_route():
-    data = request.get_json()
-    address = data.get("address")
+@app.route("/login", methods=["POST"])
+def login():
+    email = request.json.get("email")
+    print(email)
 
-    if address:
-        is_valid = verify_address(address)
-        return jsonify({"is_valid": is_valid})
+    # Check if the provided email exists in the login data
+    if any(user["email"] == email for user in login_data):
+        print('true')
+        return jsonify({"success": True, "message": "Email validated"})
     else:
-        return jsonify({"error": "Address not provided"}), 400
+        print('false')
+        return jsonify({"success": False, "message": "Email not validated"})
 
-if __name__ == '__main__':
-    app.run(debug = True)
-    
+
+if __name__ == "__main__":
+    app.run(debug=True)
