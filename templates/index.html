@@ -82,12 +82,49 @@
 <body>
     <div class="login-box">
         <h2>Login</h2>
-        <form action="/login" method="post">
-            <input type="text" name="username" placeholder="Username (Email)" required><br>
-            <input type="password" name="password" placeholder="Password" required><br>
+        <form id="loginForm">
+            <input type="text" id="email" placeholder="Username (Email)" required><br>
+            <input type="password" id="password" placeholder="Password" 
+            required><br>
+            <p id="passwordMessage" style="color: red;"></p> <!-- Message for password validation -->
             <input type="submit" value="Login">
         </form>
+        <p id="validationMessage"></p>
     </div>
     <img class="airplane" src="static/airplane.png" alt="Airplane">
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            
+            // Check if password meets the criteria
+            const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/; // At least 6 characters with at least one number
+            if (!passwordRegex.test(password)) {
+                document.getElementById("passwordMessage").textContent = "Password must be at least 6 characters long and contain at least one number.";
+                return; // Stop further execution if password is invalid
+            }
+    
+            // Clear previous password validation message if any
+            document.getElementById("passwordMessage").textContent = "";
+    
+            // Validate email
+            const response = await fetch("/validate_email", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ email })
+            });
+            const data = await response.json();
+            const validationMessage = document.getElementById("validationMessage");
+            if (data.validated) {
+                validationMessage.textContent = "Email validated.";
+            } else {
+                validationMessage.textContent = "Email not validated.";
+            }
+        });
+    </script>
+    
 </body>
 </html>
