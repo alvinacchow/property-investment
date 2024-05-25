@@ -10,10 +10,11 @@ def verify_address(street_number, street_name, city, state, zip_code):
 
     # Parsing the JSON response
     result = response.json()
-    #print(result)
+    print(result)
 
     # Check if the address was verified successfully
-    if result['TotalRecords'] > 0:
+    records = result.get('Records', [])
+    if any('YS02' in record['Results'] for record in records) or any('YS07' in record['Results'] for record in records):
         return True
     else:
         return False
