@@ -38,7 +38,7 @@
             z-index: 1;
         }
         .login-box h2 {
-            color: #000;
+            color: rgb(63, 104, 66);
         }
         .login-box input[type="text"],
         .login-box input[type="password"] {
@@ -109,22 +109,30 @@
             document.getElementById("passwordMessage").textContent = "";
     
             // Validate email
-            const response = await fetch("/validate_email", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ email })
-            });
-            const data = await response.json();
-            const validationMessage = document.getElementById("validationMessage");
-            if (data.validated) {
-                validationMessage.textContent = "Email validated.";
-            } else {
-                validationMessage.textContent = "Email not validated. :(";
+            try {
+                const response = await fetch("/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ email })
+                });
+                
+                const data = await response.json();
+                const validationMessage = document.getElementById("validationMessage");
+                
+                if (data.success) {
+                    validationMessage.textContent = data.message;
+                    // Redirect to portfolio page if validation is successful
+                    window.location.href = "/portfolio";
+                } else {
+                    validationMessage.textContent = data.message;
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById("validationMessage").textContent = "An error occurred while validating the email.";
             }
         });
     </script>
-    
 </body>
 </html>
