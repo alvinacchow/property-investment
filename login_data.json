@@ -7,6 +7,7 @@
     },
     {
         "email": "yourmom@uci.edu"
+<<<<<<< HEAD
     }, 
     {
         "comment": "Add your email and then quit the server before running!"
@@ -16,5 +17,7 @@
     },
     {
         "address": "42619 Isle Royal St, Fremont, CA 94538"
+=======
+>>>>>>> 6f72f6b2e904d9df25ef7f4295af238d9a25eb10
     }
 ]
