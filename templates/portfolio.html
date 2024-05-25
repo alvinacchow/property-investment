@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Your Portfolio</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+            background-color: #e8f3da;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+        }
+        h1 {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .bubble-box {
+            margin-top: 20px;
+            width: 70%;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .bubble-box table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .bubble-box th, .bubble-box td {
+            padding: 8px;
+            border-bottom: 2px solid rgb(146, 146, 146);
+            text-align: left;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .bubble-box th {
+            background-color: #8ccf8b;
+        }
+        .search-bar {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+        }
+        .search-bar input[type="text"] {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 300px;
+            box-sizing: border-box;
+        }
+        .search-bar button[type = "submit"]:hover {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #87a96b;
+            color: #fff;
+            cursor: pointer;
+        }
+        .error-message {
+            font-size: 14px;
+            color: rgb(63, 104, 66);
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Your Portfolio</h1>
+    <div class="search-bar">
+        <input type="text" id="search-address" placeholder="ex. 1234 Anteater Way, Irvine CA, 92617">
+        <button id="search-button">Search</button>
+        <div class="error-message" id="error-message">Invalid address.</div>
+    </div>
+    <div class="bubble-box">
+        <table id="portfolio-table">
+            <thead>
+                <tr>
+                    <th>Property</th>
+                    <th>Start Price</th>
+                    <th>Current Price</th>
+                    <th>% Change</th>
+                    <th>AI Score</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <script>
+        document.getElementById('search-button').addEventListener('click', function() {
+            var address = document.getElementById('search-address').value;
+            fetch('/verify-address', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ address: address })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (!data.is_valid) {
+                    document.getElementById('error-message').style.display = 'block';
+                } else {
+                    document.getElementById('error-message').style.display = 'none';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
