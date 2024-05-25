@@ -5,63 +5,33 @@ import matplotlib.pyplot as plt
 from keys import Key
 
 
-
-def getPropertyInfo(address: str) -> json:
-    url = "https://api.rentcast.io/v1/properties"
-    headers = {
-        "accept": "application/json",
-        "X-Api-Key": Key.rentcast_key2
-    }
-    params = {"address": address}
-    response = requests.get(url, headers=headers, params=params)
-    return json.response()
-
-def processPropertyInfo(response: json): 
-    last_sale_date = response[0]["lastSaleDate"]
-    last_sale_price = response[0]["lastSalePrice"]
-    tax_assessments = response[0]["taxAssessments"]
-
-
-def readFilePropertyInfo():
-    with open("data/alvina-home.json") as file:
+def readFilePropertyInfo(input_file) -> list[dict]:
+    # "data/alvina-home.json"
+    with open(input_file) as file:
         data = json.load(file)
-        last_sale_date = data[0]["lastSaleDate"]
-        last_sale_price = data[0]["lastSalePrice"]
-        tax_assessments = data[0]["taxAssessments"]
-        # print(last_sale_date)
-        # print(last_sale_price)
-        # print(tax_assessments)
-        return last_sale_date, last_sale_price, tax_assessments
-
-def makeGraph(tax_assessments: json): 
-    # {'2021': {'value': 1041898, 'land': 520949, 'improvements': 520949}, 
-    #  '2022': {'value': 1062734, 'land': 531367, 'improvements': 531367}, 
-    #  '2023': {'value': 1083988, 'land': 541994, 'improvements': 541994}}
-    years = list(tax_assessments.keys())
-    values = [tax_assessments[year]["value"] for year in years]
+        sales = []
+        for record in data['Records']:
+            year = record['DocInfo']['RecordingDate'][:4]
+            amount = float(record['TxAmtInfo']['TransferAmount'])
+            sales.append({"year": year, "amount": amount})
+        return sales
+    
+    
+def makeGraph(history: list[dict]): 
+    history = [entry for entry in history if entry['amount'] > 0]
+    
+    years = [int(entry['year']) for entry in history]
+    values = [entry['amount'] for entry in history]
 
     plt.plot(years, values, marker='o')
-    plt.title('Price')
+    plt.title('Property Sale Prices Over Time')
     plt.xlabel('Year')
-    plt.ylabel('Assessment Value')
-    plt.yticks(values, [format(value, ',') for value in values])
-    plt.savefig('plot.png')
-    # plt.show()
-    # fig, ax = plt.subplots()
-    # s.plot.bar()
-    # fig.savefig('plot.png')
-
-
-
-# def getMarketValue():
-#     url = "https://api.rentcast.io/v1/avm/value"
-#     headers = {"accept": "application/json",
-#             "X-Api-Key": keys.key1
-#             }
-#     params = {}
-#     response = requests.get(url, headers=headers)
-#     print(response.text)
+    plt.ylabel('Sale Price ($)')
+    plt.xticks(years, [format(int(year), 'd') for year in years])
+    plt.yticks(values, [format(int(value), ',d') for value in values])
+    plt.savefig('static/plot.png')
+    
 
 if __name__ == '__main__':
-    last_sale_date, last_sale_price, tax_assessments = readFilePropertyInfo()
-    print(makeGraph(tax_assessments))
+    sales = readFilePropertyInfo("data/alvina-home.json")
+    makeGraph(sales)
