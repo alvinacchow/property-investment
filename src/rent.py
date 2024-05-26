@@ -93,25 +93,25 @@ def getPropertyDetails(*, address: str, input_file = None):
   
 def readFilePropertyInfo(*, address: str, input_file = None) -> list[dict]:
     # melissa api 
-    # if input_file is not None: 
-    with open(input_file) as file:
-        data = json.load(file)
-        sales = []
-        for record in data['Records']:
-            year = record['DocInfo']['RecordingDate'][:4]
-            amount = float(record['TxAmtInfo']['TransferAmount'])
-            sales.append({"year": year, "amount": amount})  
-        return sales
-    # else: 
-    #     url = f'https://property.melissadata.net/v4/WEB/LookupDeeds/?id={Key.melissa_key}&format=JSON&ff={address}'
-    #     response = requests.get(url)
-    #     if response.status_code == 200:
-    #         data = response.json()
-    #         sales = []
-    #         for record in data['Records']:
-    #             year = record['DocInfo']['RecordingDate'][:4]
-    #             amount = float(record['TxAmtInfo']['TransferAmount'])
-    #             sales.append({"year": year, "amount": amount})
+    if input_file is not None: 
+        with open(input_file) as file:
+            data = json.load(file)
+            sales = []
+            for record in data['Records']:
+                year = record['DocInfo']['RecordingDate'][:4]
+                amount = float(record['TxAmtInfo']['TransferAmount'])
+                sales.append({"year": year, "amount": amount})  
+            return sales
+    else: 
+        url = f'https://property.melissadata.net/v4/WEB/LookupDeeds/?id={Key.melissa_key}&format=JSON&ff={address}'
+        response = requests.get(url)
+        if response.status_code == 200:
+            data = response.json()
+            sales = []
+            for record in data['Records']:
+                year = record['DocInfo']['RecordingDate'][:4]
+                amount = float(record['TxAmtInfo']['TransferAmount'])
+                sales.append({"year": year, "amount": amount})
 
-    # return sales
+    return sales
 
