@@ -1,0 +1,112 @@
+{
+    "Version": "7.4.2.1079",
+    "Results": "YS07",
+    "TotalRecords": 3,
+    "Records": [
+      {
+        "DocInfo": {
+          "RecordingDate": "20221117"
+        },
+        "TxDefInfo": {
+          "TransactionType": "109"
+        },
+        "TxAmtInfo": {
+          "TransferAmount": "0.00"
+        },
+        "PropertyAddress": {},
+        "PrimaryGrantor": {
+          "Name1Full": "Lewis R Schmid",
+          "Name2Full": "Schmid"
+        },
+        "SecondaryGrantor": {},
+        "PrimaryGrantee": {
+          "Name1Full": "Lewis R Schmid",
+          "Name2Full": "Schmid"
+        },
+        "SecondaryGrantee": {},
+        "TitleCompInfo": {
+          "StandardizedName": "None Available"
+        },
+        "Mortgage1": {
+          "RecordingDate": "20221117",
+          "Type": "",
+          "Amount": "0",
+          "LenderFullName": "",
+          "TermDate": "",
+          "InterestRate": "0.0000"
+        },
+        "Mortgage2": {},
+        "Valuation": {}
+      },
+      {
+        "DocInfo": {
+          "RecordingDate": "20221117"
+        },
+        "TxDefInfo": {
+          "TransactionType": "109"
+        },
+        "TxAmtInfo": {
+          "TransferAmount": "0.00"
+        },
+        "PropertyAddress": {},
+        "PrimaryGrantor": {
+          "Name1Full": "Lewis R Schmid",
+          "Name2Full": "Schmid"
+        },
+        "SecondaryGrantor": {},
+        "PrimaryGrantee": {
+          "Name1Full": "Lewis R Schmid",
+          "Name2Full": "Schmid"
+        },
+        "SecondaryGrantee": {},
+        "TitleCompInfo": {
+          "StandardizedName": "None Available"
+        },
+        "Mortgage1": {
+          "RecordingDate": "20221117",
+          "Type": "",
+          "Amount": "0",
+          "LenderFullName": "",
+          "TermDate": "",
+          "InterestRate": "0.0000"
+        },
+        "Mortgage2": {},
+        "Valuation": {}
+      },
+      {
+        "DocInfo": {
+          "RecordingDate": "20040716"
+        },
+        "TxDefInfo": {
+          "TransactionType": "21"
+        },
+        "TxAmtInfo": {
+          "TransferAmount": "0.00"
+        },
+        "PropertyAddress": {},
+        "PrimaryGrantor": {
+          "Name1Full": "Irvine Community Development Co Llc",
+          "Name2Full": ""
+        },
+        "SecondaryGrantor": {},
+        "PrimaryGrantee": {
+          "Name1Full": "Lewis R Schmid",
+          "Name2Full": "Judith E Schmid"
+        },
+        "SecondaryGrantee": {},
+        "TitleCompInfo": {
+          "StandardizedName": "First American Title Co."
+        },
+        "Mortgage1": {
+          "RecordingDate": "20040716",
+          "Type": "125",
+          "Amount": "2137500",
+          "LenderFullName": "IRVINE COMMUNITY DEVELOPMENT CO LLC",
+          "TermDate": "",
+          "InterestRate": "6.5000"
+        },
+        "Mortgage2": {},
+        "Valuation": {}
+      }
+    ]
+  }

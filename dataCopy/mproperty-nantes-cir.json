@@ -1,0 +1,68 @@
+{
+    "Version": "7.4.2.1079",
+    "TransmissionResults": "",
+    "TotalRecords": 1,
+    "Records": [
+      {
+        "Results": "YS02,YS07,YC01",
+        "Parcel": {
+          "FIPSCode": "06059",
+          "UnformattedAPN": "451-081-63",
+          "FormattedAPN": "45108163"
+        },
+        "Legal": {},
+        "PropertyAddress": {},
+        "ParsedPropertyAddress": {},
+        "PrimaryOwner": {
+          "Name1Full": "Yu Lei"
+        },
+        "SecondaryOwner": {},
+        "OwnerAddress": {},
+        "LastDeedOwnerInfo": {},
+        "CurrentDeed": {
+          "MortgageAmount": "0",
+          "MortgageDate": "20240216",
+          "MortgageDueDate": "",
+          "LenderName": ""
+        },
+        "Tax": {
+          "AssessedValueTotal": "369905",
+          "MarketValueTotal": "0",
+          "TaxFiscalYear": "2023",
+          "TaxBilledAmount": "3999.74"
+        },
+        "PropertyUseInfo": {
+          "YearBuilt": "1971"
+        },
+        "SaleInfo": {
+          "AssessorLastSaleDate": "19720627",
+          "AssessorLastSaleAmount": "36500",
+          "AssessorPriorSaleDate": "",
+          "AssessorPriorSaleAmount": "0",
+          "DeedLastSaleDate": "20240216",
+          "DeedLastSalePrice": "1545500"
+        },
+        "PropertySize": {
+          "AreaBuilding": "2166",
+          "AreaLotAcres": "0.1580",
+          "AreaLotSF": "6890.00"
+        },
+        "Pool": {},
+        "IntStructInfo": {},
+        "IntRoomInfo": {
+          "BathCount": "3",
+          "BedroomsCount": "5",
+          "RoomsCount": "9"
+        },
+        "IntAmenities": {},
+        "ExtStructInfo": {},
+        "ExtAmenities": {},
+        "ExtBuildings": {},
+        "Utilities": {},
+        "Parking": {},
+        "YardGardenInfo": {},
+        "EstimatedValue": {},
+        "Shape": {}
+      }
+    ]
+  }

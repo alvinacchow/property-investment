@@ -1,0 +1,182 @@
+{
+    "Version": "7.4.2.1079",
+    "Results": "YS07",
+    "TotalRecords": 5,
+    "Records": [
+      {
+        "DocInfo": {
+          "RecordingDate": "20231102"
+        },
+        "TxDefInfo": {
+          "TransactionType": "21"
+        },
+        "TxAmtInfo": {
+          "TransferAmount": "514500.00"
+        },
+        "PropertyAddress": {},
+        "PrimaryGrantor": {
+          "Name1Full": "Dorothy Klepp",
+          "Name2Full": "Jeffery Johnson"
+        },
+        "SecondaryGrantor": {},
+        "PrimaryGrantee": {
+          "Name1Full": "Reeland Investments",
+          "Name2Full": ""
+        },
+        "SecondaryGrantee": {},
+        "TitleCompInfo": {
+          "StandardizedName": "First American Title Co."
+        },
+        "Mortgage1": {
+          "RecordingDate": "20231102",
+          "Type": "3",
+          "Amount": "570000",
+          "LenderFullName": "KIAVI FUNDING INC",
+          "TermDate": "",
+          "InterestRate": "0.0000"
+        },
+        "Mortgage2": {},
+        "Valuation": {}
+      },
+      {
+        "DocInfo": {
+          "RecordingDate": "20190822"
+        },
+        "TxDefInfo": {
+          "TransactionType": "109"
+        },
+        "TxAmtInfo": {
+          "TransferAmount": "0.00"
+        },
+        "PropertyAddress": {},
+        "PrimaryGrantor": {
+          "Name1Full": "Tony Tello",
+          "Name2Full": "Tony Tello Living"
+        },
+        "SecondaryGrantor": {},
+        "PrimaryGrantee": {
+          "Name1Full": "Adam Tello",
+          "Name2Full": ""
+        },
+        "SecondaryGrantee": {},
+        "TitleCompInfo": {
+          "StandardizedName": "None Available"
+        },
+        "Mortgage1": {
+          "RecordingDate": "20190822",
+          "Type": "",
+          "Amount": "0",
+          "LenderFullName": "",
+          "TermDate": "",
+          "InterestRate": "0.0000"
+        },
+        "Mortgage2": {},
+        "Valuation": {}
+      },
+      {
+        "DocInfo": {
+          "RecordingDate": "20161122"
+        },
+        "TxDefInfo": {
+          "TransactionType": "109"
+        },
+        "TxAmtInfo": {
+          "TransferAmount": "0.00"
+        },
+        "PropertyAddress": {},
+        "PrimaryGrantor": {
+          "Name1Full": "U A Johnson",
+          "Name2Full": ""
+        },
+        "SecondaryGrantor": {},
+        "PrimaryGrantee": {
+          "Name1Full": "Darlene A Johnson",
+          "Name2Full": ""
+        },
+        "SecondaryGrantee": {},
+        "TitleCompInfo": {
+          "StandardizedName": "None Available"
+        },
+        "Mortgage1": {
+          "RecordingDate": "20161122",
+          "Type": "",
+          "Amount": "0",
+          "LenderFullName": "",
+          "TermDate": "",
+          "InterestRate": "0.0000"
+        },
+        "Mortgage2": {},
+        "Valuation": {}
+      },
+      {
+        "DocInfo": {
+          "RecordingDate": "20161122"
+        },
+        "TxDefInfo": {
+          "TransactionType": "109"
+        },
+        "TxAmtInfo": {
+          "TransferAmount": "0.00"
+        },
+        "PropertyAddress": {},
+        "PrimaryGrantor": {
+          "Name1Full": "Robert L Johnson",
+          "Name2Full": "Darlen Johnson"
+        },
+        "SecondaryGrantor": {},
+        "PrimaryGrantee": {
+          "Name1Full": "Darlene A Johnson",
+          "Name2Full": ""
+        },
+        "SecondaryGrantee": {},
+        "TitleCompInfo": {
+          "StandardizedName": "None Available"
+        },
+        "Mortgage1": {
+          "RecordingDate": "20161122",
+          "Type": "",
+          "Amount": "0",
+          "LenderFullName": "",
+          "TermDate": "",
+          "InterestRate": "0.0000"
+        },
+        "Mortgage2": {},
+        "Valuation": {}
+      },
+      {
+        "DocInfo": {
+          "RecordingDate": "20161122"
+        },
+        "TxDefInfo": {
+          "TransactionType": "109"
+        },
+        "TxAmtInfo": {
+          "TransferAmount": "0.00"
+        },
+        "PropertyAddress": {},
+        "PrimaryGrantor": {
+          "Name1Full": "Darlene A Johnson",
+          "Name2Full": ""
+        },
+        "SecondaryGrantor": {},
+        "PrimaryGrantee": {
+          "Name1Full": "Darlene A Johnson",
+          "Name2Full": "Darlene A Johnson Revocable"
+        },
+        "SecondaryGrantee": {},
+        "TitleCompInfo": {
+          "StandardizedName": "None Available"
+        },
+        "Mortgage1": {
+          "RecordingDate": "20161122",
+          "Type": "",
+          "Amount": "0",
+          "LenderFullName": "",
+          "TermDate": "",
+          "InterestRate": "0.0000"
+        },
+        "Mortgage2": {},
+        "Valuation": {}
+      }
+    ]
+  }

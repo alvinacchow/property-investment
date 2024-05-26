@@ -1,0 +1,182 @@
+{
+    "Version": "7.4.2.1079",
+    "Results": "YS07",
+    "TotalRecords": 5,
+    "Records": [
+      {
+        "DocInfo": {
+          "RecordingDate": "20131025"
+        },
+        "TxDefInfo": {
+          "TransactionType": "21"
+        },
+        "TxAmtInfo": {
+          "TransferAmount": "897000.00"
+        },
+        "PropertyAddress": {},
+        "PrimaryGrantor": {
+          "Name1Full": "Bradley Siu",
+          "Name2Full": "Kristie Michele Wong"
+        },
+        "SecondaryGrantor": {},
+        "PrimaryGrantee": {
+          "Name1Full": "Kevin Chow",
+          "Name2Full": "Canna Chung"
+        },
+        "SecondaryGrantee": {},
+        "TitleCompInfo": {
+          "StandardizedName": "First American Title Co."
+        },
+        "Mortgage1": {
+          "RecordingDate": "20131025",
+          "Type": "10",
+          "Amount": "620000",
+          "LenderFullName": "STEARNS LENDING INC",
+          "TermDate": "20431101",
+          "InterestRate": "0.0000"
+        },
+        "Mortgage2": {},
+        "Valuation": {}
+      },
+      {
+        "DocInfo": {
+          "RecordingDate": "20050406"
+        },
+        "TxDefInfo": {
+          "TransactionType": "21"
+        },
+        "TxAmtInfo": {
+          "TransferAmount": "835000.00"
+        },
+        "PropertyAddress": {},
+        "PrimaryGrantor": {
+          "Name1Full": "Vicky H Yoshimura",
+          "Name2Full": ""
+        },
+        "SecondaryGrantor": {},
+        "PrimaryGrantee": {
+          "Name1Full": "Bradley Siu",
+          "Name2Full": "Kristie Michele Wong"
+        },
+        "SecondaryGrantee": {},
+        "TitleCompInfo": {
+          "StandardizedName": "Chicago Title Insurance Co."
+        },
+        "Mortgage1": {
+          "RecordingDate": "20050406",
+          "Type": "",
+          "Amount": "625000",
+          "LenderFullName": "PHH MORTGAGE SERVICES CORP",
+          "TermDate": "20350501",
+          "InterestRate": "5.2500"
+        },
+        "Mortgage2": {},
+        "Valuation": {}
+      },
+      {
+        "DocInfo": {
+          "RecordingDate": "20040730"
+        },
+        "TxDefInfo": {
+          "TransactionType": "109"
+        },
+        "TxAmtInfo": {
+          "TransferAmount": "0.00"
+        },
+        "PropertyAddress": {},
+        "PrimaryGrantor": {
+          "Name1Full": "Vicky H Yoshimura",
+          "Name2Full": "Vicky Yoshimura"
+        },
+        "SecondaryGrantor": {},
+        "PrimaryGrantee": {
+          "Name1Full": "Vicky H Yoshimura",
+          "Name2Full": ""
+        },
+        "SecondaryGrantee": {},
+        "TitleCompInfo": {
+          "StandardizedName": "Ticor Title Co."
+        },
+        "Mortgage1": {
+          "RecordingDate": "20040730",
+          "Type": "127",
+          "Amount": "420000",
+          "LenderFullName": "E-LOAN INC",
+          "TermDate": "20340801",
+          "InterestRate": "4.3700"
+        },
+        "Mortgage2": {},
+        "Valuation": {}
+      },
+      {
+        "DocInfo": {
+          "RecordingDate": "20010813"
+        },
+        "TxDefInfo": {
+          "TransactionType": "21"
+        },
+        "TxAmtInfo": {
+          "TransferAmount": "530000.00"
+        },
+        "PropertyAddress": {},
+        "PrimaryGrantor": {
+          "Name1Full": "Andy C Grossman",
+          "Name2Full": "Michelle S Grossman"
+        },
+        "SecondaryGrantor": {},
+        "PrimaryGrantee": {
+          "Name1Full": "Vicky Yoshimura",
+          "Name2Full": ""
+        },
+        "SecondaryGrantee": {},
+        "TitleCompInfo": {
+          "StandardizedName": "Old Republic Title Co."
+        },
+        "Mortgage1": {
+          "RecordingDate": "20010813",
+          "Type": "126",
+          "Amount": "530000",
+          "LenderFullName": "WORLD SVGS BANK FSB",
+          "TermDate": "20310901",
+          "InterestRate": "0.0000"
+        },
+        "Mortgage2": {},
+        "Valuation": {}
+      },
+      {
+        "DocInfo": {
+          "RecordingDate": "19951228"
+        },
+        "TxDefInfo": {
+          "TransactionType": "21"
+        },
+        "TxAmtInfo": {
+          "TransferAmount": "242000.00"
+        },
+        "PropertyAddress": {},
+        "PrimaryGrantor": {
+          "Name1Full": "U S Eikerenkotter",
+          "Name2Full": ""
+        },
+        "SecondaryGrantor": {},
+        "PrimaryGrantee": {
+          "Name1Full": "Andy C Grossman",
+          "Name2Full": "Michelle S Grossman"
+        },
+        "SecondaryGrantee": {},
+        "TitleCompInfo": {
+          "StandardizedName": "First American Title Co."
+        },
+        "Mortgage1": {
+          "RecordingDate": "19951228",
+          "Type": "",
+          "Amount": "229900",
+          "LenderFullName": "BANK UNITED OF TEXAS",
+          "TermDate": "20260101",
+          "InterestRate": "7.0000"
+        },
+        "Mortgage2": {},
+        "Valuation": {}
+      }
+    ]
+  }

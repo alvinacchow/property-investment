@@ -1,0 +1,17 @@
+Id,BldgType,YearBuilt,GrLivArea,BedroomAbvGr,FullBath,SalePrice
+1,Single Family,1958,1040,3,1,215000
+2,Condo,1967,718,1,1,89900
+3,Single Family,1988,1542,4,3,315000
+4,Single Family,1945,1558,4,1,29900
+5,Single Family,1949,896,3,1,165000
+6,Single Family,1977,2518,4,2.5,284900
+7,Single Family,1995,2516,4,3,225000
+8,Single Family,1975,2888,4,3,185000
+9,Single Family,2010,444,1,1,289900
+10,Single Family,1944,2953,3,2,419900
+11,Single Family,1987,2978,4,3,355000
+12,Single Family,1920,1432,3,1.5,185900
+13,Single Family,1900,1800,3,2.5,299000
+14,Single Family,1958,1520,7,2,255000
+15,Condo,1970,1024,2,1,150000
+16,Single Family,1959,1406,3,2,229000

@@ -1,0 +1,60 @@
+[
+    {
+       "id":"1379-Dorner-Dr,-Monterey-Park,-CA-91754",
+       "formattedAddress":"1379 Dorner Dr, Monterey Park, CA 91754",
+       "addressLine1":"1379 Dorner Dr",
+       "addressLine2":"None",
+       "city":"Monterey Park",
+       "state":"CA",
+       "zipCode":"91754",
+       "county":"Los Angeles",
+       "latitude":34.038104,
+       "longitude":-118.15058,
+       "propertyType":"Multi-Family",
+       "bedrooms":4,
+       "bathrooms":2,
+       "squareFootage":1768,
+       "lotSize":6388,
+       "yearBuilt":1948,
+       "assessorID":"5251-025-015",
+       "legalDescription":"TRACT NO 14691 LOT 71",
+       "subdivision":"14691",
+       "zoning":"MPR2*",
+       "lastSaleDate":"1977-08-09T00:00:00.000Z",
+       "lastSalePrice":62000,
+       "features":{
+          "architectureType":"Duplex",
+          "cooling":true,
+          "coolingType":"Commercial",
+          "unitCount":2
+       },
+       "taxAssessments":{
+          "2023":{
+             "value":137624,
+             "land":71481,
+             "improvements":66143
+          }
+       },
+       "propertyTaxes":{
+          "2023":{
+             "total":2335
+          }
+       },
+       "owner":{
+          "names":[
+             "Yoshihiro Tsuneishi",
+             "FUMIKO TSUNEISHI"
+          ],
+          "mailingAddress":{
+             "id":"1375-Dorner-Dr,-Monterey-Park,-CA-91754",
+             "formattedAddress":"1375 Dorner Dr, Monterey Park, CA 91754",
+             "addressLine1":"1375 Dorner Dr",
+             "addressLine2":"None",
+             "city":"Monterey Park",
+             "state":"CA",
+             "zipCode":"91754"
+          }
+       },
+       "ownerOccupied":true
+    }
+ ]
