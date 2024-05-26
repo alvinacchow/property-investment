@@ -98,11 +98,20 @@
             background-position: right center;
             padding-right: 20px;
         }
-        
+        .houses {
+            position: absolute;
+            bottom: 0; /* Align to the bottom */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Center horizontally */
+            width: 80%; /* Adjust as needed */
+            height: auto; /* Maintain aspect ratio */
+            z-index: -1;
+        }
     </style>
 </head>
 <body>
     <h1>Welcome to Your Portfolio</h1>
+    <img class="houses" src="static/houses.png" alt="House">
     <div class="search-bar">
         <input type="text" id="search-address" placeholder="ex. 1234 Anteater Way, Irvine CA, 92617">
         <button id="search-button" class="bubble-button">Search</button>
@@ -169,11 +178,6 @@
 
         function selected(e){
             window.location = "http://localhost:5001/portfolio?years=" + e.value
-            // const storedYears = localStorage.getItem('years');
-            // // If a value is stored, set it as the selected option
-            // if (storedYears) {
-            //     selectElement.value = storedYears;
-            // }   
         }
         window.addEventListener('DOMContentLoaded', () => {
             const selectElement = document.getElementById('predicted-price-years');

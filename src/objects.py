@@ -3,7 +3,6 @@ import csv
 import matplotlib
 import matplotlib.pyplot as plt 
 matplotlib.use('agg')
-import threading
 
 def makeGraph(history: list[dict]): 
     history = [entry for entry in history if entry['amount'] > 0]
@@ -44,5 +43,3 @@ def preprocessing():
 def addToPortfolio(property):
     Portfolio.add_asset(property)
    
-if __name__ == '__main__':
-    addToPortfolio()
