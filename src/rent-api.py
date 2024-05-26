@@ -1,19 +1,28 @@
 import requests
 import json
-import pandas as pd 
 import matplotlib.pyplot as plt 
-from keys import Key
 import csv 
+import os 
+
+from keys import Key
+from prediction import make_prediction
 
 
 def search(address: str):
     city = address.split(",")[1].strip()
     getSaleListings(city = city, input_file = None)
     write_test_file(address = address, input_file = None)
+    make_prediction(city)
+
     
 def getSaleListings(*, city: str, input_file = None):
     field_names = ["Id", "BldgType", "YearBuilt", "GrLivArea", "BedroomAbvGr", "FullBath"]
-    with open('ai-model/city-listings.csv', 'w', newline='') as csvfile: 
+    filename = f'ai-model/{city}-listings.csv'
+
+    if os.path.exists(filename):
+        return
+
+    with open(filename, 'w', newline='') as csvfile:
         if input_file is not None:
             with open(input_file) as file:
                 data = json.load(file)
@@ -57,7 +66,7 @@ def getPropertyDetails(*, address: str, input_file = None):
     if input_file is not None:
         with open(input_file) as file:
             data = json.load(file)
-            Id = 1
+            Address = address
             BldgType = data[0].get("propertyType", "")
             YearBuilt = data[0].get("yearBuilt", 0)
             GrLivArea = data[0].get("squareFootage", 0)
@@ -73,15 +82,15 @@ def getPropertyDetails(*, address: str, input_file = None):
         response = requests.get(url, headers=headers, params=params)
         data = response.json()
         
-        Id = 1
+        Address = address
         BldgType = data[0].get("propertyType", "")
         YearBuilt = data[0].get("yearBuilt", 0)
         GrLivArea = data[0].get("squareFootage", 0)
         BedroomAbvGr = data[0].get("bedrooms", 0)
         FullBath = data[0].get("bathrooms", 0)
 
-    return Id,BldgType,YearBuilt,GrLivArea,BedroomAbvGr,FullBath
-    
+    return Address,BldgType,YearBuilt,GrLivArea,BedroomAbvGr,FullBath
+  
 def readFilePropertyInfo(*, address: str, input_file = None) -> list[dict]:
     # melissa api 
     if input_file is not None: 
@@ -97,16 +106,5 @@ def readFilePropertyInfo(*, address: str, input_file = None) -> list[dict]:
         pass 
         ### TODO: add API entry point ###
 
-def makeGraph(history: list[dict]): 
-    history = [entry for entry in history if entry['amount'] > 0]
-    
-    years = [int(entry['year']) for entry in history]
-    values = [entry['amount'] for entry in history]
-
-    plt.plot(years, values, marker='o')
-    plt.title('Property Sale Prices Over Time')
-    plt.xlabel('Year')
-    plt.ylabel('Sale Price ($)')
-    plt.xticks(years, [format(int(year), 'd') for year in years])
-    plt.yticks(values, [format(int(value), ',d') for value in values])
-    plt.savefig('static/plot.png')
+if __name__ == '__main__':
+    search("4126 1st Avenue NW, Seattle, WA 98107")

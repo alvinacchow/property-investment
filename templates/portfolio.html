@@ -114,23 +114,74 @@
                     <th>Property</th>
                     <th>Current Price</th>
                     <th>Predicted Price in 
-                        <select id="predicted-price-years">
-                            <option value="0">0 years</option>
+                        <select id="predicted-price-years" onchange="selected(this)">
+                            {% if year == "5" %}
+                            <option selected value="5">5 years</option>
+                            {% else %}
                             <option value="5">5 years</option>
+                            {% endif %}
+
+                            {% if year == "10" %}
+                            <option selected value="10">10 years</option>
+                            {% else %}
                             <option value="10">10 years</option>
+                            {% endif %}
+
+                            {% if year == "15" %}
+                            <option selected value="15">15 years</option>
+                            {% else %}
                             <option value="15">15 years</option>
+                            {% endif %}
+
+                            {% if year == "20" %}
+                            <option selected value="20">20 years</option>
+                            {% else %}
                             <option value="20">20 years</option>
+                            {% endif %}
+
+                            {% if year == "25" %}
+                            <option selected value="25">25 years</option>
+                            {% else %}
                             <option value="25">25 years</option>
-                            <option value="30">30 years</option>
+                            {% endif %}
+
                         </select>
                     </th>
                     <th>% Change</th>
-                    <th>AI Score</th>
                 </tr>
             </thead>
+            <tbody>
+                {% for asset in assets %}
+                    {% for a in asset %}
+                    <tr>
+                        <td>{{ a['property'] }}</td>
+                        <td>{{ a['current'] }}</td>
+                        <td>{{ a['predicted'] }}</td>
+                        <td>{{ a['change'] }}</td>
+                    </tr>
+                    {% endfor %}
+                {% endfor %}
+            </tbody>
         </table>
     </div>
     <script>
+
+        function selected(e){
+            window.location = "http://localhost:5001/portfolio?years=" + e.value
+            // const storedYears = localStorage.getItem('years');
+            // // If a value is stored, set it as the selected option
+            // if (storedYears) {
+            //     selectElement.value = storedYears;
+            // }   
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            const selectElement = document.getElementById('predicted-price-years');
+            const storedYears = localStorage.getItem('selectedYears');
+            if (storedYears) {
+                selectElement.value = storedYears;
+            }
+        });
+        
         document.getElementById('search-button').addEventListener('click', function() {
             var address = document.getElementById('search-address').value;
             fetch('/verify-address', {
