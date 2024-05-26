@@ -8,7 +8,7 @@ from keys import Key
 from prediction import make_prediction
 
 
-def search(address: str):
+def search_from_api(address: str):
     city = address.split(",")[1].strip()
     getSaleListings(city = city, input_file = None)
     write_test_file(address = address, input_file = None)
@@ -100,11 +100,22 @@ def readFilePropertyInfo(*, address: str, input_file = None) -> list[dict]:
             for record in data['Records']:
                 year = record['DocInfo']['RecordingDate'][:4]
                 amount = float(record['TxAmtInfo']['TransferAmount'])
-                sales.append({"year": year, "amount": amount})
-            return sales
+                sales.append({"year": year, "amount": amount})  
     else: 
-        pass 
-        ### TODO: add API entry point ###
+        url = f'https://property.melissadata.net/v4/WEB/LookupDeeds/?id={Key.melissa_key}&format=JSON&ff={address}'
+        response = requests.get(url)
+        if response.status_code == 200:
+            data = response.json()
+            sales = []
+            for record in data['Records']:
+                year = record['DocInfo']['RecordingDate'][:4]
+                amount = float(record['TxAmtInfo']['TransferAmount'])
+                sales.append({"year": year, "amount": amount})
+
+    return sales
+
+
 
 if __name__ == '__main__':
-    search("4126 1st Avenue NW, Seattle, WA 98107")
+    # search_from_api("4126 1st Avenue NW, Seattle, WA 98107")
+    readFilePropertyInfo(address="4126 1st Avenue NW, Seattle, WA 98107", input_file=None)

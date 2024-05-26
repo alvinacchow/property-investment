@@ -1,7 +1,6 @@
-from classes import Asset, Portfolio
+from src.classes import Asset, Portfolio
 import csv
 import matplotlib.pyplot as plt 
-
 
 def makeGraph(history: list[dict]): 
     history = [entry for entry in history if entry['amount'] > 0]
@@ -33,11 +32,13 @@ def calculate_projections(current_price) -> dict:
         price = int(float(price * 1.04**5))
     return price_dict
 
-def addToPortfolio():
+def preprocessing():
     current_price = get_prediction()
     property = Asset(current_price, calculate_projections(current_price))
+    return property
+
+def addToPortfolio(property):
     Portfolio.add_asset(property)
    
-
 if __name__ == '__main__':
     addToPortfolio()

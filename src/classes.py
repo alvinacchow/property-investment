@@ -20,6 +20,9 @@ class Asset:
     def get_price_projections(self): 
         return self.price_projections
     
+    def to_dict(self):
+        return {"address": self.Address, "current_price": self.current_price, "building_type": self.BldgType, "year_built": self.YearBuilt, "square_ft": self.GrLivArea, "bedrooms": self.BedroomAbvGr, "bathrooms": self.FullBath}
+    
 
 
 class Portfolio:
