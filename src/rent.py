@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import csv 
 import os 
 
-from keys import Key
-from prediction import make_prediction
+from src.keys import Key
+from src.prediction import make_prediction
 
 
 def search_from_api(address: str):

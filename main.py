@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, jsonify
 from melissa_api import verify_address
-from src.objects import preprocessing
+from src.objects import preprocessing, makeGraph
 from src.classes import Portfolio, Asset
-from src.rent import search_from_api
+from src.rent import search_from_api, readFilePropertyInfo
 
 import json
 
@@ -56,6 +56,8 @@ def verify_address_route():
         
         if is_valid:
             search_from_api(address) 
+            history = readFilePropertyInfo(address=address, input_file=None)
+            makeGraph(history)
             return jsonify({"success": True, "message": "Address validated"})
             
         else:

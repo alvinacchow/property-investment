@@ -1,6 +1,9 @@
 from src.classes import Asset, Portfolio
 import csv
+import matplotlib
 import matplotlib.pyplot as plt 
+matplotlib.use('agg')
+import threading
 
 def makeGraph(history: list[dict]): 
     history = [entry for entry in history if entry['amount'] > 0]
@@ -16,6 +19,7 @@ def makeGraph(history: list[dict]):
     plt.xticks(years, [format(int(year), 'd') for year in years])
     plt.yticks(values, [format(int(value), ',d') for value in values])
     plt.savefig('static/plot.png')
+    
 
 def get_prediction():
     with open('ai-model/prediction.csv', mode ='r')as file:
