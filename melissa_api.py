@@ -36,7 +36,7 @@ def verify_address(address):
 
 
        # Construct the URL with address parameters in the query string
-       #api_key = "MCyQtIXDDgCjb4K3S3qwcn**nSAcwXpxhQ0PC2lXxuDAZ-**"
+       api_key = "MCyQtIXDDgCjb4K3S3qwcn**nSAcwXpxhQ0PC2lXxuDAZ-**"
        url = f'https://property.melissadata.net/v4/WEB/LookupProperty?id={api_key}&t=Test&format=JSON&cols=&account=&addresskey=&a1={street_number}%20{street_name}&a2=&apn=&city={city}&country=&fips=&ff=&mak=&state={state}&postal={zip_code}'
 
 

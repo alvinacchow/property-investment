@@ -30,7 +30,7 @@ def getSaleListings(*, city: str, input_file = None):
             url = "https://api.rentcast.io/v1/listings/sale"
             headers = {
                 "accept": "application/json",
-                "X-Api-Key": Key.rentcast_key2
+                "X-Api-Key": Key.rentcast_key1
             }
             params = {"city": city}
             response = requests.get(url, headers=headers, params=params)  

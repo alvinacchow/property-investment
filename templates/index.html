@@ -31,10 +31,11 @@
        .login-box {
            background-color: rgba(242, 239, 239, 0.8);
            border-radius: 20px;
-           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+           box-shadow: 0 0 10px rgba(109, 178, 84, 0.1);
            padding: 20px;
            width: 300px;
            text-align: center;
+           position: relative;
            z-index: 1;
        }
        .login-box h2 {
@@ -75,18 +76,31 @@
            position: absolute;
            bottom: 0;
            right: 0;
-           animation: fly 8s linear infinite; /* Adjust the duration and timing function as needed */
+           animation: fly 8s linear infinite;
+       }
+       .logo {
+           width: 100px;
+           position: absolute;
+           top: -180px;
+           left: -500px;
+       }
+       .name {
+           width: 200px;
+           position: absolute;
+           top: -175px;
+           left: -425px
        }
    </style>
 </head>
 <body>
    <div class="login-box">
+       <img class="logo" src="static/logo.png" alt="Logo">
+       <img class="name" src="static/name.png" alt="Name">
        <h2>Login</h2>
        <form id="loginForm">
            <input type="text" id="email" placeholder="Username (Email)" required><br>
-           <input type="password" id="password" placeholder="Password"
-           required><br>
-           <p id="passwordMessage" style="color: red;"></p> <!-- Message for password validation -->
+           <input type="password" id="password" placeholder="Password" required><br>
+           <p id="passwordMessage" style="color: red;"></p>
            <input type="submit" value="Login">
        </form>
        <p id="validationMessage"></p>
@@ -106,7 +120,6 @@
 
             document.getElementById("passwordMessage").textContent = "";
     
-            // Validate email
             try {
                 const response = await fetch("/login", {
                     method: "POST",
@@ -120,7 +133,6 @@
             
                 if (data.success) {
                     validationMessage.textContent = data.message;
-                    // Redirect to portfolio page if validation is successful
                     window.location.href = "/portfolio";
                 } else {
                     validationMessage.textContent = data.message;
@@ -133,4 +145,3 @@
     </script>
 </body>
 </html>
-

@@ -53,7 +53,7 @@ def verify_address_route():
         is_valid = verify_address(address)
         
         if is_valid:
-            search(address)
+            #search(address)
             return jsonify({"success": True, "message": "Address validated"})
             
         else:
