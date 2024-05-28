@@ -1,5 +1,4 @@
-
-[! [Watch the demo]](https://www.youtube.com/watch?v=SjtOADkzxSA&t=1s)
+[! Watch the demo](https://www.youtube.com/watch?v=SjtOADkzxSA&t=1s)
 
 ### What is LandMark?
 The process of buying a house can be a daunting task, especially in today's real estate market. Fortunately, LandMark can educate users on the details of the real estate market and help them make informed decisions about their choice of residence, and when to sell. Our goal is to educate users on the intricacies of the real estate landscape. LandMark offers detailed insights into market trends, property information, and projected property values up to the next 25 years.
@@ -17,4 +16,4 @@ A notable accomplishment is that half of our team had never participated in a ha
 We would like to add additional functionality to the login page, such as differentiating between logging in/creating an account and keeping track of the user’s portfolio for the next time they log in. An idea we also had was to further leverage AI technology by adding an AI scoring feature to each asset. This feature will analyze property sale prices over time and provide users with insights on whether it's a good time to sell a property. Another feature we're yet to implement is the selling aspect of LandMark. The user would have the option to sell any property they add to their portfolio and see the analytics of net gain/loss if they decide to sell it. This gives them insight into when the best/worst times are to sell their properties and come to a decision just like they would in the real world.
 
 ### Devpost
-[https://devpost.com/software/landmark-m740ng](url)
+[! [View more details on Devpost!](https://devpost.com/software/landmark-m740ng)]
